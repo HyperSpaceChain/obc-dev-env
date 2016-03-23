@@ -27,7 +27,7 @@ Vagrant.configure('2') do |config|
   config.vm.synced_folder ".", "#{SRCMOUNT}"
 
   config.vm.provider :virtualbox do |vb|
-    vb.name = "openchain-baseimage"
+    vb.name = "hyperledger-baseimage"
     vb.customize ['modifyvm', :id, '--memory', '4096']
     vb.cpus = 2
   end
