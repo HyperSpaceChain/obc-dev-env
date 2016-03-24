@@ -117,11 +117,11 @@ rm -rf $GOPATH/src/github.com/golang/protobuf
 # /openchain/obc-dev-env/compile_protos.sh
 
 # Create directory for the DB
-sudo mkdir -p /var/hyperledger
-sudo chown -R vagrant:vagrant /var/hyperledger
+sudo mkdir -p /var/openchain
+sudo chown -R vagrant:vagrant /var/openchain
 
 # Ensure permissions are set for GOPATH
 sudo chown -R vagrant:vagrant $GOPATH
 
 # Update limits.conf to increase nofiles for RocksDB
-sudo cp /hyperledger/obc-dev-env/limits.conf /etc/security/limits.conf
+sudo cp /openchain/obc-dev-env/limits.conf /etc/security/limits.conf
