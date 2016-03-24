@@ -104,12 +104,12 @@ sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libbz2-dev
 
 # Run go install - CGO flags for RocksDB
-cd $GOPATH/src/github.com/openblockchain/obc-peer
+cd $GOPATH/src/github.com/hyperledger-incubator/obc-peer
 CGO_CFLAGS="-I/opt/rocksdb/include" CGO_LDFLAGS="-L/opt/rocksdb -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy" go install
 
 # Copy protobuf dir so we can build the protoc-gen-go binary. Then delete the directory.
 mkdir -p $GOPATH/src/github.com/golang/protobuf/
-cp -r $GOPATH/src/github.com/openblockchain/obc-peer/vendor/github.com/golang/protobuf/ $GOPATH/src/github.com/golang/
+cp -r $GOPATH/src/github.com/hyperledger-incubator/obc-peer/vendor/github.com/golang/protobuf/ $GOPATH/src/github.com/golang/
 go install -a github.com/golang/protobuf/protoc-gen-go
 rm -rf $GOPATH/src/github.com/golang/protobuf
 

@@ -1,5 +1,5 @@
 NAME="obc/dev-env"
-IMAGE= openchain-devbase.box
+IMAGE= hyperledger-devbase.box
 
 all: $(IMAGE)
 

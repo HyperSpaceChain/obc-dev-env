@@ -8,11 +8,11 @@ protoc --go_out=plugins=grpc:$GOPATH/src /usr/include/google/protobuf/timestamp.
 protoc --go_out=plugins=grpc:$GOPATH/src /usr/include/google/protobuf/empty.proto
 
 # Compile protos in the proto folder
-cd $GOPATH/src/github.com/openblockchain/obc-peer/protos
+cd $GOPATH/src/github.com/hyperledger-incubator/obc-peer/protos
 protoc --go_out=plugins=grpc:. *.proto
 
 # Compile all other protos
-cd $GOPATH/src/github.com/openblockchain/obc-peer/
-for f in $(find $GOPATH/src/github.com/openblockchain/obc-peer/openchain -name '*.proto'); do
-	protoc --proto_path=$GOPATH/src/github.com/openblockchain/obc-peer/ --go_out=plugins=grpc:. $f
+cd $GOPATH/src/github.com/hyperledger-incubator/obc-peer/
+for f in $(find $GOPATH/src/github.com/hyperledger-incubator/obc-peer/openchain -name '*.proto'); do
+	protoc --proto_path=$GOPATH/src/github.com/hyperledger-incubator/obc-peer/ --go_out=plugins=grpc:. $f
 done
